@@ -1,5 +1,7 @@
 import sys
 
+#pre: file string has been extracted from command line and the file exists in the directory
+#post: results of the file are in a 2d array with cookie, day, and time for each line
 def loadFile(file):
     results = []
     with open(file, 'r') as f:
@@ -19,6 +21,8 @@ def loadFile(file):
                 results.append(new)
     return results
 
+#pre: results exists as an array and day has been extracted from command line
+#post: a dictionary containing counts of cookies seen that day is outputted
 def processData(day, results):
     correct_day = False
     counters = {}
@@ -34,6 +38,8 @@ def processData(day, results):
             break
     return counters
 
+#pre: counters dictionary exists
+#post: prints out the Cookie(s) with the highest number of appearances that day
 def findHighest(counters):
     highest = max(counters.values())
     for cookie in counters:

@@ -14,9 +14,12 @@ manual_dict = {'AtY0laUfhglK3lC7': 2, 'SAZuXPGUrfbcn5UA': 1, '5UAVanZf6UtGyKVS':
 
 class MyTestCase(unittest.TestCase):
 
+#testing loadFile method from most_active_cookie script
     def test_load(self):
         self.assertEqual(loadFile('test.csv'),manual_data)
         self.assertEqual(loadFile('test2.csv'),[])
+
+#testing processData method from most_active_cookie script
     def test_process(self):
         self.assertEqual(processData('2018-12-09',manual_data), manual_dict)
         self.assertEqual(processData('2018-12-09',[]),{})
